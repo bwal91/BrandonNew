@@ -9,3 +9,4 @@ def StudentDictionary():
 	
 	for value in students:
 		print value['first_name'], value['last_name']
+StudentDictionary()

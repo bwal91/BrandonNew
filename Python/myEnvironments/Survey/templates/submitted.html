@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Result</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='this.css') }}">
+</head>
+<body>
+<div id="mainbox">
+	<h1>Submitted Info</h1>
+	<div id="info">
+		<div>Your Name: {{name}} </div>
+		<div>Dojo Location: {{loc}} </div>
+		<div>Favorite Language: {{fav}} </div>
+		<div>Comment (optional): {{comments}} </div>
+	</div>
+	<form action="/goback" method="post">
+	<div><button name="goback" type="submit" id="gback">Go Back</button></div>
+	</form>
+</div>
+</body>
+</html> 

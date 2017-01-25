@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Email Validation!</title>
+</head>
+{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'emails/css/index.css' %}"media="screen" title="no title"  charset="utf-8">
+<body>
+<div id="website">	
+	{% if request.session.notvalid == 'notvalid' %}
+	<div id="notvalid">
+		<h3 class="yes">That is NOT a Valid Email!</h3>
+		<a href="/reset">Reset</a>
+	</div>
+	{% endif %}
+	<div id="thing">
+	<form action="/validate" method="post"> 
+		<h1>Email Address: <input id="form" name="email" type="text"></h1>
+		{% csrf_token %}
+		<input type="submit" name="submit" id="button" value="Submit">
+	</div>
+
+</div>
+</body>
+</html>

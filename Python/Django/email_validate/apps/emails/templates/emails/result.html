@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Valid Email!</title>
+</head>
+{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'emails/css/result.css' %}"media="screen" title="no title"  charset="utf-8">
+<body>
+<div id="website">
+	<div id="notvalid">
+		<h3 class="yes">The email address you entered {{request.session.email}} is a VALID email address! Thank You!</h3>
+		<a href="/reset">Go Back</a>
+	
+	</div>
+	<div id="entered">
+		<h1> Email Addresses Entered:</h1>
+		<br>
+		<table id="table1">
+			<tr>
+				<th>Email Address:</th>
+				<th>Date Added:</th>
+				<th>Actions:</th>
+			</tr>	
+			{% for Emails in email %}
+			<tr>	
+				<td>{{Emails.email_add}}</td>
+				<td>{{Emails.created_at}}</td>
+				<td>
+					<a href="emails/delete/{{Emails.id}}">Delete</a>
+				</td>
+			</tr>
+		{%endfor%}
+</div>
+</body>
+</html>
