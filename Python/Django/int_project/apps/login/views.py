@@ -13,26 +13,28 @@ def index(request):
 	return render(request, 'login/index.html')
 
 def login(request):
-	log=Users.objects.Login(request)
-	if not log ==[]:
-		for error in log:
-			messages.info(request, error)
-		return redirect(reverse('my_index'))
-	else:
-		request.session['id']=Users.objects.only('id').get(email_add=request.POST['username']).id
-		request.session['name']=Users.objects.only('first_name').get(id=request.session['id']).first_name
-		return redirect(reverse('my_success'))
+    if request.method=="POST":
+    log=Registrations.objects.Login(request)
+    print log
+    if not log ==[]:
+        for error in log:
+            messages.info(request, error)
+        return redirect(reverse('login:index'))
+    else:
+        request.session['id']=Registrations.objects.only('id').get(email_add=request.POST['username']).id
+        request.session['username']=Registrations.objects.only('first_name').get(id=request.session['id']).first_name
+        return redirect('/')
 
 def register(request):
 	errors=Users.objects.UsersValidate(request)
 	if not errors == []:
 		for error in errors:
 			messages.info(request, error)
-		return redirect(reverse('my_index'))
+		return redirect(reverse('login:index'))
 	else:
 		Users.objects.Register(request)
-		return redirect(reverse('my_success'))
-	return redirect(reverse('my_success'))
+		return redirect(reverse('loginApp:my_success'))
+	return redirect(reverse('loginApp:my_success'))
 	
 def success(request):
 	
@@ -41,4 +43,4 @@ def success(request):
 def goback(request):
 	if 'name' in request.session:	
 		del request.session['name']
-	return redirect(reverse('my_index'))
+	return redirect(reverse('loginApp:my_index'))

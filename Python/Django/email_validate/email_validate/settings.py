@@ -25,7 +25,7 @@ SECRET_KEY = 'mzsid4_#0ld9bmg#&$kifutf2n2vbq5$1f@570i8)u=(*lc=(&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['35.163.218.55']
 
 
 # Application definition
@@ -119,3 +119,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+
