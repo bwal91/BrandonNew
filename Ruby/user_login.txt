@@ -1,0 +1,319 @@
+Last login: Fri Feb 10 15:11:27 on ttys000
+Brandons-MacBook-Pro:~ Brandon$ cd Desktop/CodingDojo/Ruby/user_login_project
+Brandons-MacBook-Pro:user_login_project Brandon$ rails c
+/Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/xml_mini.rb:51: warning: constant ::Fixnum is deprecated
+/Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/xml_mini.rb:52: warning: constant ::Bignum is deprecated
+/Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/core_ext/numeric/conversions.rb:138: warning: constant ::Fixnum is deprecated
+Running via Spring preloader in process 11162
+Loading development environment (Rails 5.0.1)
+2.4.0 :001 > Hirb.enable
+ => true 
+2.4.0 :002 > reload!
+Reloading...
+ => true 
+2.4.0 :003 > user4 = User.new(first_name:"Jon", last_name:"Stark", email:"jon@thewall.com", age:5)
++----+------------+-----------+-----------------+-----+------------+------------+
+| id | first_name | last_name | email           | age | created_at | updated_at |
++----+------------+-----------+-----------------+-----+------------+------------+
+|    | Jon        | Stark     | jon@thewall.com | 5   |            |            |
++----+------------+-----------+-----------------+-----+------------+------------+
+1 row in set
+2.4.0 :004 > user4.save
+   (0.1ms)  begin transaction
+   (0.1ms)  rollback transaction
+ => false 
+2.4.0 :005 > user4.errors.full_messages
+ => ["Age must be greater than or equal to 10"] 
+2.4.0 :006 > User.create(first_name:"Jon", last_name:"Stark", email:"jon@thewall.com", age:5)
+   (0.1ms)  begin transaction
+   (0.1ms)  rollback transaction
++----+------------+-----------+-----------------+-----+------------+------------+
+| id | first_name | last_name | email           | age | created_at | updated_at |
++----+------------+-----------+-----------------+-----+------------+------------+
+|    | Jon        | Stark     | jon@thewall.com | 5   |            |            |
++----+------------+-----------+-----------------+-----+------------+------------+
+1 row in set
+2.4.0 :007 > User.errors.full_messages
+NoMethodError: undefined method `errors' for #<Class:0x007ffca8af0a30>
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activerecord-5.0.1/lib/active_record/dynamic_matchers.rb:21:in `method_missing'
+	from (irb):7
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/commands/console.rb:65:in `start'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/commands/console_helper.rb:9:in `start'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/commands/commands_tasks.rb:78:in `console'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/commands/commands_tasks.rb:49:in `run_command!'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/commands.rb:18:in `<top (required)>'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:293:in `require'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:293:in `block in require'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:259:in `load_dependency'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:293:in `require'
+	from /Users/Brandon/Desktop/CodingDojo/Ruby/user_login_project/bin/rails:9:in `<top (required)>'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:287:in `load'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:287:in `block in load'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:259:in `load_dependency'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:287:in `load'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/commands/rails.rb:6:in `call'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/command_wrapper.rb:38:in `call'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application.rb:191:in `block in serve'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application.rb:161:in `fork'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application.rb:161:in `serve'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application.rb:131:in `block in run'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application.rb:125:in `loop'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application.rb:125:in `run'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application/boot.rb:19:in `<top (required)>'
+	from /Users/Brandon/.rvm/rubies/ruby-2.4.0/lib/ruby/site_ruby/2.4.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from /Users/Brandon/.rvm/rubies/ruby-2.4.0/lib/ruby/site_ruby/2.4.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from -e:1:in `<main>'
+2.4.0 :008 > User.create(first_name:"Jon", last_name:"Stark", email:"jon@thewall.com", age:5)
+   (0.1ms)  begin transaction
+   (0.0ms)  rollback transaction
++----+------------+-----------+-----------------+-----+------------+------------+
+| id | first_name | last_name | email           | age | created_at | updated_at |
++----+------------+-----------+-----------------+-----+------------+------------+
+|    | Jon        | Stark     | jon@thewall.com | 5   |            |            |
++----+------------+-----------+-----------------+-----+------------+------------+
+1 row in set
+2.4.0 :009 > User.create(first_name:"Jon", last_name:"Stark", email:"jon@thewall.com", age:5).errors.full_messages
+   (0.1ms)  begin transaction
+   (0.1ms)  rollback transaction
+ => ["Age must be greater than or equal to 10"] 
+2.4.0 :010 > User.order(first_name: :desc)
+  User Load (0.2ms)  SELECT "users".* FROM "users" ORDER BY "users"."first_name" DESC
++----+------------+-----------+----------------------+-----+-------------------------+-------------------------+
+| id | first_name | last_name | email                | age | created_at              | updated_at              |
++----+------------+-----------+----------------------+-----+-------------------------+-------------------------+
+| 2  | Kyle       | Johnson   | Noidea@idea.com      | 22  | 2017-02-10 22:09:37 UTC | 2017-02-10 22:09:37 UTC |
+| 3  | Cersei     | Lannister | queen@landing.com    | 35  | 2017-02-10 22:10:05 UTC | 2017-02-10 22:10:05 UTC |
+| 1  | Brandon    | Walter    | Brandon@LiveHuge.com | 25  | 2017-02-10 22:08:44 UTC | 2017-02-10 22:08:44 UTC |
++----+------------+-----------+----------------------+-----+-------------------------+-------------------------+
+3 rows in set
+2.4.0 :011 > user3.find
+NameError: undefined local variable or method `user3' for main:Object
+Did you mean?  user4
+	from (irb):11
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/commands/console.rb:65:in `start'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/commands/console_helper.rb:9:in `start'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/commands/commands_tasks.rb:78:in `console'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/commands/commands_tasks.rb:49:in `run_command!'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/commands.rb:18:in `<top (required)>'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:293:in `require'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:293:in `block in require'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:259:in `load_dependency'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:293:in `require'
+	from /Users/Brandon/Desktop/CodingDojo/Ruby/user_login_project/bin/rails:9:in `<top (required)>'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:287:in `load'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:287:in `block in load'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:259:in `load_dependency'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:287:in `load'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/commands/rails.rb:6:in `call'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/command_wrapper.rb:38:in `call'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application.rb:191:in `block in serve'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application.rb:161:in `fork'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application.rb:161:in `serve'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application.rb:131:in `block in run'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application.rb:125:in `loop'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application.rb:125:in `run'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application/boot.rb:19:in `<top (required)>'
+	from /Users/Brandon/.rvm/rubies/ruby-2.4.0/lib/ruby/site_ruby/2.4.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from /Users/Brandon/.rvm/rubies/ruby-2.4.0/lib/ruby/site_ruby/2.4.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from -e:1:in `<main>'
+2.4.0 :012 > User.find(3)
+  User Load (0.2ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 3], ["LIMIT", 1]]
++----+------------+-----------+-------------------+-----+-------------------------+-------------------------+
+| id | first_name | last_name | email             | age | created_at              | updated_at              |
++----+------------+-----------+-------------------+-----+-------------------------+-------------------------+
+| 3  | Cersei     | Lannister | queen@landing.com | 35  | 2017-02-10 22:10:05 UTC | 2017-02-10 22:10:05 UTC |
++----+------------+-----------+-------------------+-----+-------------------------+-------------------------+
+1 row in set
+2.4.0 :013 > c3.last_name = "Testing"
+NameError: undefined local variable or method `c3' for main:Object
+	from (irb):13
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/commands/console.rb:65:in `start'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/commands/console_helper.rb:9:in `start'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/commands/commands_tasks.rb:78:in `console'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/commands/commands_tasks.rb:49:in `run_command!'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/commands.rb:18:in `<top (required)>'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:293:in `require'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:293:in `block in require'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:259:in `load_dependency'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:293:in `require'
+	from /Users/Brandon/Desktop/CodingDojo/Ruby/user_login_project/bin/rails:9:in `<top (required)>'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:287:in `load'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:287:in `block in load'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:259:in `load_dependency'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:287:in `load'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/commands/rails.rb:6:in `call'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/command_wrapper.rb:38:in `call'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application.rb:191:in `block in serve'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application.rb:161:in `fork'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application.rb:161:in `serve'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application.rb:131:in `block in run'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application.rb:125:in `loop'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application.rb:125:in `run'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application/boot.rb:19:in `<top (required)>'
+	from /Users/Brandon/.rvm/rubies/ruby-2.4.0/lib/ruby/site_ruby/2.4.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from /Users/Brandon/.rvm/rubies/ruby-2.4.0/lib/ruby/site_ruby/2.4.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from -e:1:in `<main>'
+2.4.0 :014 > user3.last_name = "Testing"
+NameError: undefined local variable or method `user3' for main:Object
+Did you mean?  user4
+	from (irb):14
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/commands/console.rb:65:in `start'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/commands/console_helper.rb:9:in `start'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/commands/commands_tasks.rb:78:in `console'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/commands/commands_tasks.rb:49:in `run_command!'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/commands.rb:18:in `<top (required)>'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:293:in `require'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:293:in `block in require'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:259:in `load_dependency'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:293:in `require'
+	from /Users/Brandon/Desktop/CodingDojo/Ruby/user_login_project/bin/rails:9:in `<top (required)>'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:287:in `load'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:287:in `block in load'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:259:in `load_dependency'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:287:in `load'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/commands/rails.rb:6:in `call'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/command_wrapper.rb:38:in `call'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application.rb:191:in `block in serve'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application.rb:161:in `fork'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application.rb:161:in `serve'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application.rb:131:in `block in run'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application.rb:125:in `loop'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application.rb:125:in `run'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application/boot.rb:19:in `<top (required)>'
+	from /Users/Brandon/.rvm/rubies/ruby-2.4.0/lib/ruby/site_ruby/2.4.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from /Users/Brandon/.rvm/rubies/ruby-2.4.0/lib/ruby/site_ruby/2.4.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from -e:1:in `<main>'
+2.4.0 :015 > User.find(3)
+  User Load (0.1ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 3], ["LIMIT", 1]]
++----+------------+-----------+-------------------+-----+-------------------------+-------------------------+
+| id | first_name | last_name | email             | age | created_at              | updated_at              |
++----+------------+-----------+-------------------+-----+-------------------------+-------------------------+
+| 3  | Cersei     | Lannister | queen@landing.com | 35  | 2017-02-10 22:10:05 UTC | 2017-02-10 22:10:05 UTC |
++----+------------+-----------+-------------------+-----+-------------------------+-------------------------+
+1 row in set
+2.4.0 :016 > c1 = User.find(1)
+  User Load (0.1ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 1], ["LIMIT", 1]]
++----+------------+-----------+----------------------+-----+-------------------------+-------------------------+
+| id | first_name | last_name | email                | age | created_at              | updated_at              |
++----+------------+-----------+----------------------+-----+-------------------------+-------------------------+
+| 1  | Brandon    | Walter    | Brandon@LiveHuge.com | 25  | 2017-02-10 22:08:44 UTC | 2017-02-10 22:08:44 UTC |
++----+------------+-----------+----------------------+-----+-------------------------+-------------------------+
+1 row in set
+2.4.0 :017 > c1 = User.find(3)
+  User Load (0.1ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 3], ["LIMIT", 1]]
++----+------------+-----------+-------------------+-----+-------------------------+-------------------------+
+| id | first_name | last_name | email             | age | created_at              | updated_at              |
++----+------------+-----------+-------------------+-----+-------------------------+-------------------------+
+| 3  | Cersei     | Lannister | queen@landing.com | 35  | 2017-02-10 22:10:05 UTC | 2017-02-10 22:10:05 UTC |
++----+------------+-----------+-------------------+-----+-------------------------+-------------------------+
+1 row in set
+2.4.0 :018 > c1.last_name = "Testing"
+ => "Testing" 
+2.4.0 :019 > c1.save
+   (0.1ms)  begin transaction
+  SQL (1.7ms)  UPDATE "users" SET "last_name" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_name", "Testing"], ["updated_at", 2017-02-10 23:32:48 UTC], ["id", 3]]
+   (0.6ms)  commit transaction
+ => true 
+2.4.0 :020 > User.all
+  User Load (0.2ms)  SELECT "users".* FROM "users"
++----+------------+-----------+----------------------+-----+-------------------------+-------------------------+
+| id | first_name | last_name | email                | age | created_at              | updated_at              |
++----+------------+-----------+----------------------+-----+-------------------------+-------------------------+
+| 1  | Brandon    | Walter    | Brandon@LiveHuge.com | 25  | 2017-02-10 22:08:44 UTC | 2017-02-10 22:08:44 UTC |
+| 2  | Kyle       | Johnson   | Noidea@idea.com      | 22  | 2017-02-10 22:09:37 UTC | 2017-02-10 22:09:37 UTC |
+| 3  | Cersei     | Testing   | queen@landing.com    | 35  | 2017-02-10 22:10:05 UTC | 2017-02-10 23:32:48 UTC |
++----+------------+-----------+----------------------+-----+-------------------------+-------------------------+
+3 rows in set
+2.4.0 :021 > User.find(4)
+  User Load (0.1ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 4], ["LIMIT", 1]]
+ActiveRecord::RecordNotFound: Couldn't find User with 'id'=4
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activerecord-5.0.1/lib/active_record/core.rb:173:in `find'
+	from (irb):21
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/commands/console.rb:65:in `start'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/commands/console_helper.rb:9:in `start'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/commands/commands_tasks.rb:78:in `console'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/commands/commands_tasks.rb:49:in `run_command!'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/commands.rb:18:in `<top (required)>'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:293:in `require'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:293:in `block in require'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:259:in `load_dependency'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:293:in `require'
+	from /Users/Brandon/Desktop/CodingDojo/Ruby/user_login_project/bin/rails:9:in `<top (required)>'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:287:in `load'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:287:in `block in load'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:259:in `load_dependency'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:287:in `load'
+	from /Users/Brandon/.rvm/rubies/ruby-2.4.0/lib/ruby/site_ruby/2.4.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from /Users/Brandon/.rvm/rubies/ruby-2.4.0/lib/ruby/site_ruby/2.4.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from -e:1:in `<main>'
+2.4.0 :022 > User.create(first_name:"Jon", last_name:"Stark", email:"jon@thewall.com", age:25)
+   (0.1ms)  begin transaction
+  SQL (0.4ms)  INSERT INTO "users" ("first_name", "last_name", "email", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["first_name", "Jon"], ["last_name", "Stark"], ["email", "jon@thewall.com"], ["age", 25], ["created_at", 2017-02-10 23:34:05 UTC], ["updated_at", 2017-02-10 23:34:05 UTC]]
+   (4.0ms)  commit transaction
++----+------------+-----------+-----------------+-----+-------------------------+-------------------------+
+| id | first_name | last_name | email           | age | created_at              | updated_at              |
++----+------------+-----------+-----------------+-----+-------------------------+-------------------------+
+| 4  | Jon        | Stark     | jon@thewall.com | 25  | 2017-02-10 23:34:05 UTC | 2017-02-10 23:34:05 UTC |
++----+------------+-----------+-----------------+-----+-------------------------+-------------------------+
+1 row in set
+2.4.0 :023 > User.find(4)
+  User Load (0.2ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 4], ["LIMIT", 1]]
++----+------------+-----------+-----------------+-----+-------------------------+-------------------------+
+| id | first_name | last_name | email           | age | created_at              | updated_at              |
++----+------------+-----------+-----------------+-----+-------------------------+-------------------------+
+| 4  | Jon        | Stark     | jon@thewall.com | 25  | 2017-02-10 23:34:05 UTC | 2017-02-10 23:34:05 UTC |
++----+------------+-----------+-----------------+-----+-------------------------+-------------------------+
+1 row in set
+2.4.0 :024 > User.(4).destroy
+NoMethodError: undefined method `call' for #<Class:0x007ffca8af0a30>
+Did you mean?  all
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activerecord-5.0.1/lib/active_record/dynamic_matchers.rb:21:in `method_missing'
+	from (irb):24
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/commands/console.rb:65:in `start'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/commands/console_helper.rb:9:in `start'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/commands/commands_tasks.rb:78:in `console'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/commands/commands_tasks.rb:49:in `run_command!'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/commands.rb:18:in `<top (required)>'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:293:in `require'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:293:in `block in require'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:259:in `load_dependency'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:293:in `require'
+	from /Users/Brandon/Desktop/CodingDojo/Ruby/user_login_project/bin/rails:9:in `<top (required)>'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:287:in `load'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:287:in `block in load'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:259:in `load_dependency'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:287:in `load'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/commands/rails.rb:6:in `call'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/command_wrapper.rb:38:in `call'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application.rb:191:in `block in serve'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application.rb:161:in `fork'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application.rb:161:in `serve'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application.rb:131:in `block in run'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application.rb:125:in `loop'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application.rb:125:in `run'
+	from /Users/Brandon/.rvm/gems/ruby-2.4.0/gems/spring-2.0.1/lib/spring/application/boot.rb:19:in `<top (required)>'
+	from /Users/Brandon/.rvm/rubies/ruby-2.4.0/lib/ruby/site_ruby/2.4.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from /Users/Brandon/.rvm/rubies/ruby-2.4.0/lib/ruby/site_ruby/2.4.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from -e:1:in `<main>'
+2.4.0 :025 > User.find(4).destroy
+  User Load (0.1ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 4], ["LIMIT", 1]]
+   (0.1ms)  begin transaction
+  SQL (0.3ms)  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 4]]
+   (3.9ms)  commit transaction
++----+------------+-----------+-----------------+-----+-------------------------+-------------------------+
+| id | first_name | last_name | email           | age | created_at              | updated_at              |
++----+------------+-----------+-----------------+-----+-------------------------+-------------------------+
+| 4  | Jon        | Stark     | jon@thewall.com | 25  | 2017-02-10 23:34:05 UTC | 2017-02-10 23:34:05 UTC |
++----+------------+-----------+-----------------+-----+-------------------------+-------------------------+
+1 row in set
+2.4.0 :026 > User.all
+  User Load (0.2ms)  SELECT "users".* FROM "users"
++----+------------+-----------+----------------------+-----+-------------------------+-------------------------+
+| id | first_name | last_name | email                | age | created_at              | updated_at              |
++----+------------+-----------+----------------------+-----+-------------------------+-------------------------+
+| 1  | Brandon    | Walter    | Brandon@LiveHuge.com | 25  | 2017-02-10 22:08:44 UTC | 2017-02-10 22:08:44 UTC |
+| 2  | Kyle       | Johnson   | Noidea@idea.com      | 22  | 2017-02-10 22:09:37 UTC | 2017-02-10 22:09:37 UTC |
+| 3  | Cersei     | Testing   | queen@landing.com    | 35  | 2017-02-10 22:10:05 UTC | 2017-02-10 23:32:48 UTC |
++----+------------+-----------+----------------------+-----+-------------------------+-------------------------+
+3 rows in set
+2.4.0 :027 > 
