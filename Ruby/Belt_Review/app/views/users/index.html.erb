@@ -1,0 +1,133 @@
+<title>Welcome!</title>
+<%= stylesheet_link_tag "application-User" %>
+
+<div id="wrapper">
+	<h1 id="welcome">Welcome!</h1>
+	<h2 id="toplinks"><%= flash[:notice] %> </h2>
+	<div id="register_box">
+		<form action="/register" method="post">
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		<h1>Register</h1>
+		<p>
+			<label for="first_name">
+			<span>First Name: </span>
+			</label>
+			<input type="text" id="first_name" name="user[first_name]">
+		</p>
+		<p>
+			<label for="last_name">
+			<span>Last Name: </span>
+			</label>
+			<input type="text" id="last_name" name="user[last_name]">
+		</p>
+		<p>
+			<label for="email">
+			<span>Email: </span>
+			</label>
+			<input type="email" id="email" name="user[email]">
+		</p>
+		<p>
+			<label for="city">
+			<span>Location: </span>
+			</label>
+			<input type="text" name="user[city]" id="city" placeholder="City">
+		</p>
+		<p>
+			<select name="user[state]" id="state">
+				<option selected disabled>Select State</option>
+				<option value="AL">Alabama</option>
+				<option value="AK">Alaska</option>
+				<option value="AZ">Arizona</option>
+				<option value="AR">Arkansas</option>
+				<option value="CA">California</option>
+				<option value="CO">Colorado</option>
+				<option value="CT">Connecticut</option>
+				<option value="DE">Delaware</option>
+				<option value="DC">District Of Columbia</option>
+				<option value="FL">Florida</option>
+				<option value="GA">Georgia</option>
+				<option value="HI">Hawaii</option>
+				<option value="ID">Idaho</option>
+				<option value="IL">Illinois</option>
+				<option value="IN">Indiana</option>
+				<option value="IA">Iowa</option>
+				<option value="KS">Kansas</option>
+				<option value="KY">Kentucky</option>
+				<option value="LA">Louisiana</option>			
+				<option value="ME">Maine</option>
+				<option value="MD">Maryland</option>
+				<option value="MA">Massachusetts</option>
+				<option value="MI">Michigan</option>
+				<option value="MN">Minnesota</option>
+				<option value="MS">Mississippi</option>
+				<option value="MO">Missouri</option>
+				<option value="MT">Montana</option>
+				<option value="NE">Nebraska</option>
+				<option value="NV">Nevada</option>
+				<option value="NH">New Hampshire</option>
+				<option value="NJ">New Jersey</option>
+				<option value="NM">New Mexico</option>
+				<option value="NY">New York</option>
+				<option value="NC">North Carolina</option>
+				<option value="ND">North Dakota</option>
+				<option value="OH">Ohio</option>
+				<option value="OK">Oklahoma</option>
+				<option value="OR">Oregon</option>
+				<option value="PA">Pennsylvania</option>
+				<option value="RI">Rhode Island</option>
+				<option value="SC">South Carolina</option>
+				<option value="SD">South Dakota</option>
+				<option value="TN">Tennessee</option>
+				<option value="TX">Texas</option>
+				<option value="UT">Utah</option>
+				<option value="VT">Vermont</option>
+				<option value="VA">Virginia</option>
+				<option value="WA">Washington</option>
+				<option value="WV">West Virginia</option>
+				<option value="WI">Wisconsin</option>
+				<option value="WY">Wyoming</option>
+			</select>
+		</p>
+		<p>
+			<label for="password">
+			<span>Password:</span>
+			</label>
+			<input type="password" name="user[password]" id="password">
+		</p>
+		<p>
+			<span>*Password must be at least 8 characters</span>
+		</p>
+		<p>
+			<label for="password_confirmation">
+			<span>Confirm Password</span>
+			</label>
+			<input type="password" name="user[password_confirmation]" id="password_confirmation">
+		</p>
+		<input id="register" type="submit" name="register" value="Register">
+		</form>
+
+	</div>
+	<div id="login_box">
+		<form action="/login" method="post">
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		<h1>Login</h1>
+		<p>
+			<label for="login_email">
+				<span>Email: </span>
+			</label>
+			<input type="email" name="login_email" id="login_email">
+		</p>
+		<p>
+			<label for="login_password">
+				<span>Password: </span>
+			</label>
+			<input type="password" name="login_password" id="login_password">
+		</p>
+		<input id="login" type="submit" name="login" value="Login">
+		</form>
+	</div>
+	<div id="errors">
+		<h4><%= flash[:error] %></h4>
+	</div>
+
+</div>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BeltReview</title>
+    <%= csrf_meta_tags %>
+
+    <%= javascript_include_tag( 'index' ) %>
+    <%= stylesheet_link_tag "application-User", :media => "User" %>
+	 <%= stylesheet_link_tag "application-Event", :media => "Event" %>
+    
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

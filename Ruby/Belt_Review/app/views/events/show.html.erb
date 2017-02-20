@@ -1,0 +1,84 @@
+<title>Event Details</title>
+<%= stylesheet_link_tag "application-Event" %>
+<%= javascript_include_tag( 'index' ) %>
+<div id="wrapper">
+	<div id="header_event">
+		<h1 id="welcome_event"><%= @host.event.name %></h1>
+		<a id="toplinks_events" href="/events">Events Dashboard</a>
+		<a href="/logout" style="color:white;">Logout</a>
+	</div>
+	<div id="register_box">
+		<table id="this_event">
+			<tr>	
+				<td align="left">Host: </td>
+				<td align="right"><%= @host.user.first_name %></td>
+			</tr>
+			<tr>	
+				<td align="left">Date: </td>
+				<td align="right"><%= @host.event.date.strftime("%B %d, %Y") %></td>
+			</tr>
+			<tr>	
+				<td align="left">Location: </td>
+				<td align="right"><%= @host.event.city %>, <%= @host.event.state %></td>
+			</tr>
+			<tr>	
+				<td align="left">People who are Joining the Event: </td>
+				<td align="right"><%= @count %></td>
+			</tr>
+
+		<table id="all_events" class="sortable">
+			<tr>
+				<th id="event_name">Name</th>
+				<th class="this">Location</th>
+				<th class="this">State</th>
+			</tr>
+			<% @users.each do |x| %>
+			<tr>
+				<td id="name"><%= x.user.first_name %>  <%= x.user.last_name %></td>
+				<td class="that"><%= x.user.city %></td>
+				<td class="that"><%= x.user.state %></td>
+			</tr>
+			<% end %>
+		</table>
+
+	</div>
+	<div id="comment_box" class="sortable">
+	<h2 id="discussion">Discussion about this event: </h2>
+		<table id="comments">
+		<% @comments.each do |comment| %>
+			<tr>
+				<td><p><font color="black"><%= comment.user.first_name %> says:</font> &nbsp&nbsp <%= comment.comment %></p></td>
+			</tr>
+		<% end %>
+
+		</table>
+	</div>
+	<div id="add_comment">
+	<h2> Add Comment: </h2>
+	<form action="/add/comment" method="post">
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		<input type="hidden" name="comment[user_id]" value="<%= session[:user_id] %>">
+		<input type="hidden" name="comment[event_id]" value="<%= @event_id %>">
+		<textarea id="comment" name="comment[comment]"></textarea>
+		<input id="sub_com" type="submit" name="submit" value="Submit Comment">
+	</form>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
