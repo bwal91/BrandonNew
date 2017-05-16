@@ -12,15 +12,13 @@ require 'faker'
 
 # end
 
-# 20.times do |index|
-#   User.create!(first_name: Faker::Name.first_name,
-#                	last_name: Faker::Name.last_name,
-#                 email: Faker::Internet.safe_email,
-#                 city: Faker::Address.city,
-#                 state: Faker::Address.state_abbr,
-#                 password: 'password',
-#                 password_confirmation: 'password' )
-# end
+20.times do |index|
+  User.create!(name: Faker::Name.name,
+               	alias: Faker::Name.first_name,
+                email: Faker::Internet.safe_email,
+                password: 'password',
+                password_confirmation: 'password' )
+end
 
 # 20.times do |index|
 #   Comment.create!(comment: Faker::Lorem.paragraphs(2),

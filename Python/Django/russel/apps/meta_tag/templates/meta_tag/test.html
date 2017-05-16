@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Meta Tag Generator</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+	<script src="http://createjs.org/js/create.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'meta_tag/css/index.css' %}"media="screen" title="no title"  charset="utf-8">
+</head>
+<style type="text/css">.select { display: inline-block; width: 30%;}</style>
+<body>
+<div class="navbar-wrapper">
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<!-- Responsive navbar -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</a>
+				<h1 class="brand"><a href="index.html">XML Generator</a></h1>
+				<!-- navigation -->
+				<nav class="pull-right nav-collapse collapse">
+				<ul id="menu-main" class="nav">
+					<li><a title="team" href="#about">Generator</a></li>
+				</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- {{ file.name }} -->
+<div class="site-wrapper" style="margin-top: 100px;">
+	<div id="current" class="select">
+		<h1> Select Current XML File</h1>
+		<form>
+			<select name="file">
+				<option value="name">File 1</option>
+			</select>
+		</form>
+	</div>
+	<div id="import" class="select">
+		<h1>Import XML File</h1>
+	</div>
+	<div id="create" class="select">
+		<h1>Create new XML File</h1>
+		<form>
+			<label>App Name</label>
+			<input type="text" name="app_name">
+			<!-- {% csrf_token %} -->
+			<input type="submit" name="submit">
+		</form>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="node_modules/react/dist/react.js"></script>
+	<script src="node_modules/react-dom/dist/react-dom.js"></script>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+	<br>
+	<br>
+	<div id="app"></div>
+
+
+
+
+
+
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+        <script type="text/babel">
+
+
+			class App extends React.Component {
+				constructor(props){
+					super(props);
+					this.state = {
+						react: 0,
+						vue: 0,
+						angular: 0,
+						ember: 0
+					}
+				}
+				render() {
+					return (
+						<div>
+							<h1 className="head"> Vote Your JS Library! </h1>
+							<div className="table">
+								<div className="row">
+									<div className="number">{this.state.react}</div>
+									<div className="name"><h1>React</h1></div>
+									<div className="button"><button onClick={ () => this.setState({ react: this.state.react + 1 })}><h1> + </h1></button></div>
+								</div>
+								<div className="line"></div>
+								<div className="row">
+									<div className="number">{this.state.vue}</div>
+									<div className="name"><h1>Vue</h1></div>
+									<div className="button"><button onClick={ () => this.setState({ vue: this.state.vue + 1 })}><h1> + </h1></button></div>
+								</div>
+								<div className="line"></div>
+								<div className="row">
+									<div className="number">{this.state.angular}</div>
+									<div className="name"><h1>Angular</h1></div>
+									<div className="button"><button onClick={ () => this.setState({ angular: this.state.angular + 1 })}><h1> + </h1></button></div>
+								</div>
+								<div className="line"></div>
+								<div className="row">
+									<div className="number">{this.state.ember}</div>
+									<div className="name"><h1>Ember</h1></div>
+									<div className="button"><button onClick={ () => this.setState({ ember: this.state.ember + 1 })}><h1> + </h1></button></div>
+								</div>
+							</div>
+							<button onClick={ () => this.setState({ vue: 0, angular: 0, react: 0, ember: 0 })}><h1> Reset </h1></button>
+						</div>
+					)
+				}
+			}
+
+			ReactDOM.render(
+				<App />,
+				document.getElementById('app')
+			);
+        	
+        </script>
+    <script type="text/javascript">
+
+    	
+
+    	 // const jsContainer = document.querySelector('#js');
+        // const reactContainer = document.querySelector('#react');
+        // function render(){
+        //     const reactDescriptiveObjects = React.createElement(
+        //                                         'div', 
+        //                                         null, 
+        //                                         React.createElement('h1',null,'Hello React'),
+        //                                         'Name: ', 
+        //                                         React.createElement('input'),
+        //                                         React.createElement('p', null, `The current time is:`
+        //                                         )
+        //                                     )
+        //     jsContainer.innerHTML = `
+        //         <h1>Hello Dojo!</h1>
+        //         Name: <input type="text"/>
+        //         <p>The current time is: ${ new Date() }</p>
+        //     `;
+        //     ReactDOM.render(
+        //         reactDescriptiveObjects,
+        //         reactContainer
+        //     );
+        // }
+        // render();
+        // setInterval(render, 1000);
+
+
+   //  	const tileArray = [
+   //  		{ background: 'Blue', textColor: 'Red'},
+			// { background: 'Red', textColor: 'Blue'},
+			// { background: 'Yellow', textColor: 'Pink'},
+			// { background: 'Teal', textColor: 'Purple'}
+   //  	]
+	  //   function App(props){
+	  //   		newArr = []
+	  //   		for(var i=0; i < tileArray.length; i++){
+	  //   			newArr.push(React.createElement(Tile, tileArray[i]))
+
+	  //   		};
+	  //   		return React.createElement('div', null, newArr)
+	  //   }
+
+
+	  //   function Tile(props){
+	  //   	const background = props.background;
+	  //   	const textColor = props.textColor;
+	  //   	const propsObj = {
+	  //   		style: {
+	  //   			backgroundColor: background,
+	  //   			color: textColor,
+	  //   			height: 300,
+	  //   			width: 300,
+	  //   			display: 'inline-block',
+	  //   			margin: '3',
+	  //   			fontSize: '40'
+	  //   		},
+	  //   		children: `${props.textColor} on ${background}`
+	  //   	}
+	  //   	return React.createElement('div', propsObj);
+
+
+	  //   }
+
+	  //   ReactDOM.render(
+	  //   	React.createElement(App), 
+	  //   	document.getElementById('app')
+	  //   	)
+    // const HeadlineComponent = function(props){
+    // 	return React.createElement('h1', null, props.title);
+    // }
+
+    // const h = React.createElement(HeadlineComponent, {title: 'Goodbye Dojo'})
+    // ReactDOM.render(h, document.getElementById('js'))
+
+
+       
+        
+    	// const reactThis = React.createElement(
+    	// 		'div',
+    	// 		null,
+    	// 		React.createElement('h1', null, 'Hello Dojo!'),
+    	// 		React.createElement('h3', null, 'Things I need to do:'),
+    	// 		React.createElement('ul', null,
+    	// 			React.createElement('li', null, 'Learn React'),
+    	// 			React.createElement('li', null, 'Climb Mt. Everest'),
+    	// 			React.createElement('li', null, 'Feed the dogs')
+    	// 		)
+
+    	// 	)
+     //    ReactDOM.render(reactThis, document.getElementById('js'))
+
+
+    </script>
+
+</body>
+</html>

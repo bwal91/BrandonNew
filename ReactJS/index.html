@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<div>
+
+		<h1>Hello Dojo!</h1><span id="time"></span>
+		<br>
+		<button id="time-btn">Click to get Curren Time</button>
+	</div>
+	<script type="text/javascript">
+		document.getElementById('time-btn').onclick = () => {
+			document.getElementById('time').innerHTML = new Date().toLocaleString();
+		}
+	</script>
+</body>
+</html>

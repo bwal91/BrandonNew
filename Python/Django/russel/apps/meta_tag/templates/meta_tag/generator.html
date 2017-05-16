@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Meta Tag Generator</title>
+</head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- Test -->
+   	
+	{% load staticfiles %}
+
+	<link rel="stylesheet" href="{% static 'meta_tag/css/index.css' %}" media="screen" title="no title"  charset="utf-8">
+	<style>
+        .aceEditor
+        {
+            position: relative;
+            width: 500px;
+            height: 200px;
+        }
+    </style>
+    
+<body>
+<div class="navbar-wrapper">
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<!-- Responsive navbar -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</a>
+				<h1 class="brand"><a href="index.html">XML Generator</a></h1>
+				<!-- navigation -->
+				
+				<nav class="pull-right nav-collapse collapse">
+				<ul id="menu-main" class="nav">
+					<li><a title="team" href="#about">Generator</a></li>
+				</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="about">
+	<div class="site-wrapper">
+		<div id="add-items">
+			<button type="button" onclick="">MetaData Tag</button>
+			<button type="button" onclick="">Close MetaData Tag</button>
+			<button type="button" onclick="">Asset Tag</button>
+			<button type="button" onclick="">Close Asset Tag</button>
+			<button type="button" id="showHideAMS">AMS...</button>
+			<button type="button" id="showHideApp">App...</button>
+			<button type="button" id="showHideContent">Content...</button>
+			
+
+			
+		</div>
+		<div id="ams" class="popdown">
+			<div class="bootstrap-iso">
+			 <div class="container-fluid">
+			  <div class="row">
+			   <div class="col-md-6 col-sm-6 col-xs-12">
+			    <form class="form-horizontal" method="post">
+			     <div class="form-group ">
+			      <label class="control-label col-sm-2" for="asset_class">
+			       Asset_Class
+			      </label>
+			      <div class="col-sm-10">
+			       <input class="form-control" id="asset_class" name="asset_class" type="text"/>
+			      </div>
+			     </div>
+			     <div class="form-group ">
+			      <label class="control-label col-sm-2" for="asset_id">
+			       Asset_ID
+			      </label>
+			      <div class="col-sm-10">
+			       <input class="form-control" id="asset_id" name="asset_id" type="text"/>
+			      </div>
+			     </div>
+			     <div class="form-group ">
+			      <label class="control-label col-sm-2" for="asset_name">
+			       Asset_Name
+			      </label>
+			      <div class="col-sm-10">
+			       <input class="form-control" id="asset_name" name="asset_name" type="text"/>
+			      </div>
+			     </div>
+			     <div class="form-group ">
+			      <label class="control-label col-sm-2" for="creation_date">
+			       Creation_Date
+			      </label>
+			      <div class="col-sm-10">
+			       <input class="form-control" id="creation_date" name="creation_date" type="text"/>
+			      </div>
+			     </div>
+			     <div class="form-group ">
+			      <label class="control-label col-sm-2" for="description">
+			       Description
+			      </label>
+			      <div class="col-sm-10">
+			       <input class="form-control" id="description" name="description" type="text"/>
+			      </div>
+			     </div>
+			     <div class="form-group ">
+			      <label class="control-label col-sm-2" for="product">
+			       Product
+			      </label>
+			      <div class="col-sm-10">
+			       <input class="form-control" id="product" name="product" type="text"/>
+			      </div>
+			     </div>
+			     <div class="form-group ">
+			      <label class="control-label col-sm-2" for="provider">
+			       Provider
+			      </label>
+			      <div class="col-sm-10">
+			       <input class="form-control" id="provider" name="provider" type="text"/>
+			      </div>
+			     </div>
+			     <div class="form-group ">
+			      <label class="control-label col-sm-2" for="provider_id">
+			       Provider_ID
+			      </label>
+			      <div class="col-sm-10">
+			       <input class="form-control" id="provider_id" name="provider_id" type="text"/>
+			      </div>
+			     </div>
+			     <div class="form-group ">
+			      <label class="control-label col-sm-2" for="verb">
+			       Verb
+			      </label>
+			      <div class="col-sm-10">
+			       <input class="form-control" id="verb" name="verb" type="text"/>
+			      </div>
+			     </div>
+			     <div class="form-group ">
+			      <label class="control-label col-sm-2" for="version_major">
+			       Version_Major
+			      </label>
+			      <div class="col-sm-10">
+			       <input class="form-control" id="version_major" name="version_major" type="text"/>
+			      </div>
+			     </div>
+			     <div class="form-group ">
+			      <label class="control-label col-sm-2" for="version_minor">
+			       Version_Minor
+			      </label>
+			      <div class="col-sm-10">
+			       <input class="form-control" id="version_minor" name="version_minor" type="text"/>
+			      </div>
+			     </div>
+			     <div class="form-group">
+			      <div class="col-sm-10 col-sm-offset-2">
+			       <button class="btn btn-primary " name="submit" type="submit">
+			        Add
+			       </button>
+			      </div>
+			     </div>
+			    </form>
+			   </div>
+			  </div>
+			 </div>
+			</div>
+		</div>
+		<div id="app" class="popdown">
+			<div class="bootstrap-iso">
+			 <div class="container-fluid">
+			  <div class="row">
+			   <div class="col-md-6 col-sm-6 col-xs-12">
+			    <form class="form-horizontal" method="post">
+			     <div class="form-group ">
+			      <label class="control-label col-sm-2" for="app">
+			       App
+			      </label>
+			      <div class="col-sm-10">
+			       <input class="form-control" id="app" name="app" type="text"/>
+			      </div>
+			     </div>
+			     <div class="form-group ">
+			      <label class="control-label col-sm-2" for="name">
+			       Name
+			      </label>
+			      <div class="col-sm-10">
+			       <input class="form-control" id="name" name="name" type="text"/>
+			      </div>
+			     </div>
+			     <div class="form-group ">
+			      <label class="control-label col-sm-2" for="value">
+			       Value
+			      </label>
+			      <div class="col-sm-10">
+			       <input class="form-control" id="value" name="value" type="text"/>
+			      </div>
+			     </div>
+			     <div class="form-group">
+			      <div class="col-sm-10 col-sm-offset-2">
+			       <button class="btn btn-primary " name="submit" type="submit">
+			        Add
+			       </button>
+			      </div>
+			     </div>
+			    </form>
+			   </div>
+			  </div>
+			 </div>
+			</div>
+		</div>
+		<div id="content" class="popdown">
+			<div class="bootstrap-iso">
+			 <div class="container-fluid">
+			  <div class="row">
+			   <div class="col-md-6 col-sm-6 col-xs-12">
+			    <form class="form-horizontal" method="post">
+			     <div class="form-group ">
+			      <label class="control-label col-sm-2" for="app">
+			       Value
+			      </label>
+			      <div class="col-sm-10">
+			       <input class="form-control" id="app" name="content_value" type="text"/>
+			      </div>
+			    </form>
+			   </div>
+			  </div>
+			 </div>
+			</div>
+		</div>
+	</div>
+		<script src="https://ajaxorg.github.io/ace-builds/src/ace.js"></script>
+	<div id="preview">
+		<div class='aceEditor' id='aceInputXml' style="width: 100%; height: 100%;">
+	
+		</div>
+    	<input type='button' id='btnSave' class="btn btn-primary" value='Save' />
+    	<input id='xmlFileInput' type='file' class="btn btn-primary" />
+    	<script xmlns="http://www.w3.org/1999/xhtml" async="" src="https://cdn.rawgit.com/eligrey/Blob.js/0cef2746414269b16834878a8abc52eb9d53e6bd/Blob.js"></script>
+    	<script xmlns="http://www.w3.org/1999/xhtml" async="" src="https://cdn.rawgit.com/eligrey/FileSaver.js/e9d941381475b5df8b7d7691013401e171014e89/FileSaver.min.js"></script>
+    	<script>
+		    (function () {
+		        'use strict';
+		        var aceInputXml, editor;
+
+		        setupAce();
+		        setupFileInput();
+		        setupFileDownload();
+
+
+		        // Initialize the ACE editors and save their object references.
+		        function setupAce() {
+		            aceInputXml = ace.edit('aceInputXml');
+		            editor = aceInputXml;
+		               editor.setTheme('ace/theme/merbivore');
+		               editor.getSession().setMode('ace/mode/xml');
+		               editor.setOptions({
+				        enableBasicAutocompletion: true,
+				        enableSnippets: true,
+				        enableLiveAutocompletion: false,
+				        setUseWrapMode: true,
+				    });
+
+				    editor.commands.addCommand({
+			        name: "showKeyboardShortcuts",
+			        bindKey: {win: "Ctrl-Alt-h", mac: "Command-Alt-h"},
+			        exec: function(editor) {
+			            ace.config.loadModule("ace/ext/keybinding_menu", function(module) {
+			                module.init(editor);
+			                editor.showKeyboardShortcuts()
+			            	})
+				        }
+				    })
+		        }
+		        // Set up the HTML5 file inputs so that the user can populate the ACE editors
+		        // by selecting a file.
+		        function setupFileInput() {
+		            (function () {
+		                var xmlFileInput;
+		                xmlFileInput = document.getElementById('xmlFileInput');
+		                xmlFileInput.addEventListener('change', function (e) {
+		                    var file;
+		                    file = e.srcElement.files[0];
+		                    putFileContentsInAceEditor(file, aceInputXml);
+		                });
+		            })();
+		        }
+
+		        // Setup the button that the user can click to download the output.
+		        function setupFileDownload() {
+		            var button;
+		            button = document.getElementById('btnSave');
+		            button.addEventListener('click', function (e) {
+		                var outputXmlStr, blob;
+		                outputXmlStr = aceInputXml.getSession().getValue();
+		                // If the string is null or empty, do nothing.
+		                if (!outputXmlStr)
+		                    return;
+		                blob = new Blob([outputXmlStr], { type: 'text/plain' });
+		                // Use the FileSaver.js interface to download the file.
+		                saveAs(blob, 'Output.xml');
+		            });
+		        }
+
+		        // A small function that takes a file and an ACE editor object.
+		        // The function reads the file and copies its contents into the ACE editor.
+		        function putFileContentsInAceEditor(file, aceEditor) {
+		            var reader, text;
+		            reader = new FileReader();
+		            reader.onload = (function (file) {
+		                text = file.target.result;
+		                aceEditor.getSession().setValue(text);
+		            });
+		            reader.readAsText(file);
+		        }
+		    })();    
+		</script>
+	</div>
+</div>
+
+<script>
+	// editor.execCommand("showKeyboardShortcuts")
+
+	document.getElementById('showHideAMS').onclick = function() {
+	    divTest = document.getElementById('ams');
+	    appdiv = document.getElementById('app');
+		contentdiv = document.getElementById('content');
+	    if (appdiv.style.display == "inline-block"){
+	    	appdiv.style.display = "none";
+	    }
+	    if (contentdiv.style.display == "inline-block"){
+	    	contentdiv.style.display = "none";
+	    }
+	    if (divTest.style.display === "none") {
+	        divTest.style.display = 'inline-block';
+	    }
+	    else {
+	        divTest.style.display = "none";
+	    }
+	}
+	document.getElementById('showHideApp').onclick = function() {
+	    divTest = document.getElementById('app');
+	    amsdiv = document.getElementById('ams');
+		contentdiv = document.getElementById('content');
+		if (amsdiv.style.display == "inline-block"){
+	    	amsdiv.style.display = "none";
+	    }
+	    if (contentdiv.style.display == "inline-block"){
+	    	contentdiv.style.display = "none";
+	    }
+	    if (divTest.style.display === "none") {
+	        divTest.style.display = 'inline-block';
+	    }
+	    else {
+	        divTest.style.display = "none";
+	    }
+	}
+	document.getElementById('showHideContent').onclick = function() {
+	    divTest = document.getElementById('content');
+	    appdiv = document.getElementById('app');
+		amsdiv = document.getElementById('ams');
+		if (amsdiv.style.display == "inline-block"){
+	    	amsdiv.style.display = "none";
+	    }
+	    if (appdiv.style.display == "inline-block"){
+	    	appdiv.style.display = "none";
+	    }
+	    if (divTest.style.display === "none") {
+	        divTest.style.display = 'inline-block';
+	    }
+	    else {
+	        divTest.style.display = "none";
+	    }
+	}
+
+
+	// function exportLog(){
+ //    var elHtml = document.getElementById('log').innerTEXT;
+ //    var link = document.createElement('a');
+ //    var mimeType = 'text/plain';
+
+ //    link.setAttribute('download', 'logFile');
+ //    link.setAttribute('href', 'data:' + mimeType  +  ';charset=utf-8,' + encodeURIComponent(elHtml));
+ //    link.click();
+	// }
+</script>
+<!-- <script>
+    ace.require("ace/ext/language_tools");
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/vibrant-ink");
+    // enable autocompletion and snippets
+    editor.setOptions({
+        enableBasicAutocompletion: true,
+        enableSnippets: true,
+        enableLiveAutocompletion: true,
+        enableEmmet: true,
+    });
+    editor.commands.addCommand({
+        name: "showKeyboardShortcuts",
+        bindKey: {win: "Ctrl-Alt-h", mac: "Command-Alt-h"},
+        exec: function(editor) {
+            ace.config.loadModule("ace/ext/keybinding_menu", function(module) {
+                module.init(editor);
+                editor.showKeyboardShortcuts()
+            })
+        }
+    })
+    editor.execCommand("showKeyboardShortcuts")
+</script> -->
+</body>
+
+</html>
